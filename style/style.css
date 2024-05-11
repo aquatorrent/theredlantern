@@ -1,0 +1,24 @@
+.list-group-item{
+    color: #1b289d;
+} 
+:root{
+    --bs-border-color: #91827D;
+    --bs-body-bg:#d6d2d0;
+}
+.nav-pills{
+    --bs-nav-pills-link-active-bg: #8f7f79;
+    --bs-link-color:  #000;
+}
+header{
+    background-color: #897bd7;
+    --bs-body-color: #000;
+}
+.navbar-brand{
+    --bs-navbar-brand-color: #404040;
+    --bs-navbar-brand-hover-color: #404040;
+}
+.footer{
+    background-color: #897bd7;
+    --bs-body-color: #fff;
+    --bs-link-color-rgb: #cd5151;
+}

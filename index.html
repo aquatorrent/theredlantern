@@ -1,0 +1,1256 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">    
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400..700&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+        <link rel="stylesheet" href="style/style.min.css">
+
+        <title>The Red Lantern Journal Tracker</title>
+    </head>
+
+    <body>
+        <header class="navbar sticky-top">
+            <div class="container">
+                <span class="navbar-brand mb-0 h1">
+                    <img src="img/logo.png" alt="The Red Lantern" height="40">
+                    <span class="mx-2">Journal Tracker</span>
+                </span>
+                <form class="d-flex" role="action">
+                    <button class="btn me-2" type="button" id="clear-cache" data-bs-toggle="tooltip" data-bs-title='Saved using local storage'>Clear Data</button>
+                    <button type="button" class="btn me-2" data-bs-toggle="modal" data-bs-target="#import-data-from-save">
+                        Import data from Save
+                    </button>
+                    <label class="d-flex btn">
+                        <div class="form-check form-switch">
+                            <input class="form-check-input" type="checkbox" role="switch" id="show-how-tos" checked>
+                            <label class="form-check-label" for="show-how-tos">Show how tos</label>
+                        </div>   
+                    </label>                   
+                </form>
+            </div>
+        </header>
+    
+
+        <!-- Modal -->
+        <div class="modal fade" id="import-data-from-save" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h4>Import data from local save</h4>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <p>This will delete your current data.</p>
+                    <p>Save files are located in</p>
+                    <ul class="text-start">
+                        <li><b>Windows:</b> C:\Users\(username)\Documents\TheRedLantern\Profiles\(Steam username)</li>
+                        <li><b>Steam Deck:</b> <br>(Steam library folder)/steamapps/compatdata/1053710/pfx/</li>
+                    </ul>
+                    <p>
+                        <label class="btn btn-primary" for="file-import">Import data from Save</label>
+                        <input type="file" style="display:none" name="file-import" id="file-import" value="Import data from Save">
+                    </p>
+                </div>
+            </div>
+            </div>
+        </div>
+
+        <div class="container content">
+            <!-- Content here -->
+            <div class="row">
+                <div class="col-4 gy-4">
+                    <div class="position-fixed h-75 w-25">
+                        <nav id="navbar-example3" class="h-100 flex-column align-items-stretch pe-4 border-end position-relative overflow-y-scroll">
+                            <nav class="nav nav-pills flex-column" >
+                                <a class="nav-link" href="#see-the-natural-beauty">SEE THE NATURAL BEAUTY</a>
+                                <a class="nav-link" href="#live-off-the-land">LIVE OFF THE LAND</a>
+                                <a class="nav-link" href="#hanging-with-my-fluffy-friends">HANGING WITH MY FLUFFY FRIENDS</a>
+                                <a class="nav-link" href="#the-fox">The FOX</a>
+                                <a class="nav-link" href="#the-bear">The BEAR</a>
+                                <a class="nav-link" href="#the-weasel">The WEASEL</a>
+                                <a class="nav-link" href="#the-owl">The OWL</a>
+                                <a class="nav-link" href="#the-rabbit">The RABBIT</a>
+                                <a class="nav-link" href="#the-moose">The MOOSE</a>
+                                <a class="nav-link" href="#the-eagle">The EAGLE</a>
+                                <a class="nav-link" href="#the-deer">The DEER</a>
+                                <a class="nav-link" href="#the-caribou">The CARIBOU</a>
+                                <a class="nav-link" href="#the-squirrel">The SQUIRREL</a>
+                                <a class="nav-link" href="#the-porcupine">The PORCUPINE</a>
+                                <a class="nav-link" href="#the-skunk">The SKUNK</a>
+                                <a class="nav-link" href="#the-elk">The ELK</a>
+                                <a class="nav-link" href="#the-ptamirgans">The PTARMIGANS</a>
+                                <a class="nav-link" href="#the-ox">The OX</a>
+                                <a class="nav-link" href="#the-wolverine">The WOLVERINE</a>
+                                <a class="nav-link" href="#the-wolf">The WOLF</a>
+                                <a class="nav-link" href="#the-beaver">The BEAVER</a>
+                            </nav>
+                        </nav>
+                    </div>
+                </div>
+              
+                <div class="col-8 gy-5">
+                  <div data-bs-spy="scroll" data-bs-target="#navbar-example3" data-bs-smooth-scroll="true" class="scrollspy-example-3" tabindex="0">
+                    <div id="see-the-natural-beauty">
+                        <h4>SEE THE NATURAL BEAUTY</h4>
+                        <ul class="list-group list-group-flush">
+                            <li class="list-group-item">
+                                <input class="form-check-input me-1" type="checkbox" value="OBJ_SEEPLAINS" id="obj-seeplains">
+                                <label class="form-check-label" for="obj-seeplains">I've never met a tree I didn't like</label>
+                                <div class="card mx-4 my-2">
+                                    <div class="card-body">
+                                        <div data-bs-toggle="collapse" data-bs-target="#collapse-obj-seeplains">
+                                            <div class="row row-cols-2" role="button">
+                                                <div class="col">How to get</div>
+                                                <div class="col text-end"><i class="bi-chevron-down"></i></div>
+                                            </div>
+                                        </div>
+                                        <div class="collapse mt-3" id="collapse-obj-seeplains">
+                                            Enter the plains area. Just play long enough and you'll get it eventually.
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="list-group-item">
+                                <input class="form-check-input me-1" type="checkbox" value="OBJ_SEEFOREST" id="obj-seeforest">
+                                <label class="form-check-label" for="obj-seeforest">felt small out on the plains</label>
+                                <div class="card mx-4 my-2">
+                                    <div class="card-body">
+                                        <div data-bs-toggle="collapse" data-bs-target="#collapse-obj-seeforest">
+                                            <div class="row row-cols-2" role="button">
+                                                <div class="col">How to get</div>
+                                                <div class="col text-end"><i class="bi-chevron-down"></i></div>
+                                            </div>
+                                        </div>
+                                        <div class="collapse mt-3" id="collapse-obj-seeforest">
+                                            Enter the forest area. Just play long enough and you'll get it eventually.
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="list-group-item">
+                                <input class="form-check-input me-1" type="checkbox" value="OBJ_FROZENLAKE" id="obj-frozenlake">
+                                <label class="form-check-label" for="obj-frozenlake">maybe I'll see a narwhal</label>
+                                <div class="card mx-4 my-2">
+                                    <div class="card-body">
+                                        <div data-bs-toggle="collapse" data-bs-target="#collapse-obj-frozenlake">
+                                            <div class="row row-cols-2" role="button">
+                                                <div class="col">How to get</div>
+                                                <div class="col text-end"><i class="bi-chevron-down"></i></div>
+                                            </div>
+                                        </div>
+                                        <div class="collapse mt-3" id="collapse-obj-frozenlake">
+                                            Enter the frozen lake area. Just play long enough and you'll get it eventually.
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="list-group-item">
+                                <input class="form-check-input me-1" type="checkbox" value="OBJ_RIVERRUN" id="obj-riverrun">
+                                <label class="form-check-label" for="obj-riverrun">there's just so much ice</label>
+                                <div class="card mx-4 my-2">
+                                    <div class="card-body">
+                                        <div data-bs-toggle="collapse" data-bs-target="#collapse-obj-riverrun">
+                                            <div class="row row-cols-2" role="button">
+                                                <div class="col">How to get</div>
+                                                <div class="col text-end"><i class="bi-chevron-down"></i></div>
+                                            </div>
+                                        </div>
+                                        <div class="collapse mt-3" id="collapse-obj-riverrun">
+                                            Go through the river area. Just play long enough and you'll get it eventually.
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="list-group-item">
+                                <input class="form-check-input me-1" type="checkbox" value="OBJ_SEECOAST" id="obj-seecoast">
+                                <label class="form-check-label" for="obj-seecoast">are there really a million lakes here?</label>
+                                <div class="card mx-4 my-2">
+                                    <div class="card-body">
+                                        <div data-bs-toggle="collapse" data-bs-target="#collapse-obj-seecoast">
+                                            <div class="row row-cols-2" role="button">
+                                                <div class="col">How to get</div>
+                                                <div class="col text-end"><i class="bi-chevron-down"></i></div>
+                                            </div>
+                                        </div>
+                                        <div class="collapse mt-3" id="collapse-obj-seecoast">
+                                            Go through the coast area. Just play long enough and you'll get it eventually.
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="list-group-item">
+                                <input class="form-check-input me-1" type="checkbox" value="OBJ_SEEMOUNTAINS" id="obj-seemountains">
+                                <label class="form-check-label" for="obj-seemountains">OBJ_SEEMOUNTAINS</label>
+                            </li>
+                            <li class="list-group-item">
+                                <input class="form-check-input me-1" type="checkbox" value="OBJ_FINDHOME" id="obj-findhome">
+                                <label class="form-check-label" for="obj-frozenlake">the cabin really is nestled between the rocks</label>
+                                <div class="card mx-4 my-2">
+                                    <div class="card-body">
+                                        <div data-bs-toggle="collapse" data-bs-target="#collapse-obj-findhome">
+                                            <div class="row row-cols-2" role="button">
+                                                <div class="col">How to get</div>
+                                                <div class="col text-end"><i class="bi-chevron-down"></i></div>
+                                            </div>
+                                        </div>
+                                        <div class="collapse mt-3" id="collapse-obj-findhome">
+                                            Reach the cabin.
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div id="live-off-the-land" class="mt-3">
+                        <h4>LIVE OFF THE LAND</h4>
+                        <ul class="list-group list-group-flush">
+                            <li class="list-group-item">
+                                <input class="form-check-input me-1" type="checkbox" value="OBJ_FISHEDNEWPLACE" id="obj-fishednewplace">
+                                <label class="form-check-label" for="obj-fishednewplace">caught a fish! - I am patient now.</label>
+                                <div class="card mx-4 my-2">
+                                    <div class="card-body">
+                                        <div data-bs-toggle="collapse" data-bs-target="#collapse-obj-fishednewplace">
+                                            <div class="row row-cols-2" role="button">
+                                                <div class="col">How to get</div>
+                                                <div class="col text-end"><i class="bi-chevron-down"></i></div>
+                                            </div>
+                                        </div>
+                                        <div class="collapse mt-3" id="collapse-obj-fishednewplace">
+                                            <b>Event:</b> I don't know if I'll ever feel comfortable running on top of water.<br>
+                                            Get the fishing pole and fish.
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="list-group-item">
+                                <input class="form-check-input me-1" type="checkbox" value="OBJ_ASPENBIRCH" id="obj-aspenbirch">
+                                <label class="form-check-label" for="obj-seeforest">successfully identified a birch tree</label>
+                                <div class="card mx-4 my-2">
+                                    <div class="card-body">
+                                        <div data-bs-toggle="collapse" data-bs-target="#collapse-obj-aspenbirch">
+                                            <div class="row row-cols-2" role="button">
+                                                <div class="col">How to get</div>
+                                                <div class="col text-end"><i class="bi-chevron-down"></i></div>
+                                            </div>
+                                        </div>
+                                        <div class="collapse mt-3" id="collapse-obj-aspenbirch">
+                                            Can be obtained in several events. Take bark from the birch trees.
+                                            <ul>
+                                                <li><b>Event:</b> Hey! Those look like birch up ahead.</li>
+                                                <li><b>Event:</b> It's nice not being desperate for birch bark. I like knowing we can always start a fire.</li>
+                                                <li><b>Event:</b> Looks like we have a lone birch tree up ahead, pups.</li>
+                                                <li><b>Event:</b> Looks like we've found some birch trees.</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="list-group-item">
+                                <input class="form-check-input me-1" type="checkbox" value="OBJ_SCAVENGE" id="obj-scavenge">
+                                <label class="form-check-label" for="obj-scavenge">OBJ_SCAVENGE</label>
+                            </li>
+                            <li class="list-group-item">
+                                <input class="form-check-input me-1" type="checkbox" value="OBJ_CABINITEM" id="obj-cabinitem">
+                                <label class="form-check-label" for="obj-cabinitem">OBJ_CABINITEM</label>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div id="hanging-with-my-fluffy-friends" class="mt-3">
+                        <h4>HANGING WITH MY FLUFFY FRIENDS</h4>
+                        <ul class="list-group list-group-flush">
+                            <li class="list-group-item">
+                                <input class="form-check-input me-1" type="checkbox" value="OBJ_DOGSFEEDFULLBOWL" id="obj-dogsfeedfullbowl">
+                                <label class="form-check-label" for="obj-dogsfeedfullbowl">fed the pups a feast for dog kings</label>
+                                <div class="card mx-4 my-2">
+                                    <div class="card-body">
+                                        <div data-bs-toggle="collapse" data-bs-target="#collapse-obj-dogsfeedfullbowl">
+                                            <div class="row row-cols-2" role="button">
+                                                <div class="col">How to get</div>
+                                                <div class="col text-end"><i class="bi-chevron-down"></i></div>
+                                            </div>
+                                        </div>
+                                        <div class="collapse mt-3" id="collapse-obj-dogsfeedfullbowl">
+                                            Make a camp and feed the dogs until their hunger level is maxed.
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="list-group-item">
+                                <input class="form-check-input me-1" type="checkbox" value="OBJ_DOGSPETALL" id="obj-dogspetall">
+                                <label class="form-check-label" for="obj-dogspetall">love to pet my pups</label>
+                                <div class="card mx-4 my-2">
+                                    <div class="card-body">
+                                        <div data-bs-toggle="collapse" data-bs-target="#collapse-obj-dogspetall">
+                                            <div class="row row-cols-2" role="button">
+                                                <div class="col">How to get</div>
+                                                <div class="col text-end"><i class="bi-chevron-down"></i></div>
+                                            </div>
+                                        </div>
+                                        <div class="collapse mt-3" id="collapse-obj-dogspetall">
+                                            Make a camp and pet the dogs.
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="list-group-item">
+                                <input class="form-check-input me-1" type="checkbox" value="OBJ_CAMPEATRAWMEAT" id="obj-campeatrawmeat">
+                                <label class="form-check-label" for="obj-campeatrawmeat">OBJ_CAMPEATRAWMEAT</label>
+                            </li>
+                            <li class="list-group-item">
+                                <input class="form-check-input me-1" type="checkbox" value="OBJ_CAMPMAKEFIRE" id="obj-campmakefire">
+                                <label class="form-check-label" for="obj-campmakefire">OBJ_CAMPMAKEFIRE</label>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div id="the-fox" class="mt-3">
+                        <h4>The FOX</h4>
+                        <ul class="list-group list-group-flush">
+                            <li class="list-group-item">
+                                <input class="form-check-input me-1" type="checkbox" value="OBJ_FOXCATCHPREY" id="obj-foxcatchprey">
+                                <label class="form-check-label" for="obj-foxcatchprey">That hunting dive is incredible</label>
+                                <div class="card mx-4 my-2">
+                                    <div class="card-body">
+                                        <div data-bs-toggle="collapse" data-bs-target="#collapse-obj-foxcatchprey">
+                                            <div class="row row-cols-2" role="button">
+                                                <div class="col">How to get</div>
+                                                <div class="col text-end"><i class="bi-chevron-down"></i></div>
+                                            </div>
+                                        </div>
+                                        <div class="collapse mt-3" id="collapse-obj-foxcatchprey">
+                                            <b>Event:</b> Can you actually find food like that?<br>
+                                            Choose "I want to see if you can pull this off.", then keep on watching the fox. At the end, there will be a chance that the fox will catch a prey. Choose "I can conquer this too. Thanks for the inspiration." and "Thanks, foxy." to get the journal entry. 
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="list-group-item">
+                                <input class="form-check-input me-1" type="checkbox" value="OBJ_FOXWATCH" id="obj-foxwatch">
+                                <label class="form-check-label" for="obj-foxwatch">But it takes a lot of patience</label>
+                                <div class="card mx-4 my-2">
+                                    <div class="card-body">
+                                        <div data-bs-toggle="collapse" data-bs-target="#collapse-obj-foxwatch">
+                                            <div class="row row-cols-2" role="button">
+                                                <div class="col">How to get</div>
+                                                <div class="col text-end"><i class="bi-chevron-down"></i></div>
+                                            </div>
+                                        </div>
+                                        <div class="collapse mt-3" id="collapse-obj-foxwatch">
+                                            <b>Event:</b> Can you actually find food like that?<br>
+                                            Choose "I want to see if you can pull this off.", then keep on watching the fox. At the end, there will be a chance that the fox will give up.
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div id="the-bear" class="mt-3">
+                        <h4>The BEAR</h4>
+                        <ul class="list-group list-group-flush">
+                            <li class="list-group-item">
+                                <input class="form-check-input me-1" type="checkbox" value="OBJ_BEARCABIN" id="obj-bearcabin">
+                                <label class="form-check-label" for="obj-bearcabin">Bears need homes too</label>
+                                <div class="card mx-4 my-2">
+                                    <div class="card-body">
+                                        <div data-bs-toggle="collapse" data-bs-target="#collapse-obj-bearcabin">
+                                            <div class="row row-cols-2" role="button">
+                                                <div class="col">How to get</div>
+                                                <div class="col text-end"><i class="bi-chevron-down"></i></div>
+                                            </div>
+                                        </div>
+                                        <div class="collapse mt-3" id="collapse-obj-bearcabin">
+                                            <b>Event:</b> Ok, so there's just a creepy abandoned cabin sitting over there. Um...<br>
+                                            Choose anything for the first option, then choose "I can handle whatever's in there!" for the second option. There will be a chance that a bear will be in the cabin.
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="list-group-item">
+                                <input class="form-check-input me-1" type="checkbox" value="OBJ_BEARBOOP" id="obj-bearboop">
+                                <label class="form-check-label" for="obj-bearboop">The cutest snoot boop</label>
+                                <div class="card mx-4 my-2">
+                                    <div class="card-body">
+                                        <div data-bs-toggle="collapse" data-bs-target="#collapse-obj-bearboop">
+                                            <div class="row row-cols-2" role="button">
+                                                <div class="col">How to get</div>
+                                                <div class="col text-end"><i class="bi-chevron-down"></i></div>
+                                            </div>
+                                        </div>
+                                        <div class="collapse mt-3" id="collapse-obj-bearboop">
+                                            <b>Event:</b> Aww, a little bear cub!<br>
+                                            Choose "Let's follow it and see.", then "Let's watch and see what happens.". There will be a chance that a mama bear will show up and give the cub a kiss.
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="list-group-item">
+                                <input class="form-check-input me-1" type="checkbox" value="OBJ_BEARMOMATTACK" id="obj-bearmomattack">
+                                <label class="form-check-label" for="obj-bearcabin">There's always a mama bear somewhere</label>
+                                <div class="card mx-4 my-2">
+                                    <div class="card-body">
+                                        <div data-bs-toggle="collapse" data-bs-target="#collapse-obj-bearmomattack">
+                                            <div class="row row-cols-2" role="button">
+                                                <div class="col">How to get</div>
+                                                <div class="col text-end"><i class="bi-chevron-down"></i></div>
+                                            </div>
+                                        </div>
+                                        <div class="collapse mt-3" id="collapse-obj-bearmomattack">
+                                            <b>Event:</b> Aww, a little bear cub!<br>
+                                            Choose "Let's follow it and see.", then "Let's watch and see what happens.". There will be a chance that a mama bear will show up from the right side of the screen and attack you.
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="list-group-item">
+                                <input class="form-check-input me-1" type="checkbox" value="OBJ_BEARTREESCRATCH" id="obj-beartreescratch">
+                                <label class="form-check-label" for="obj-bearboop">I wonder if I need a scratching tree</label>
+                                <div class="card mx-4 my-2">
+                                    <div class="card-body">
+                                        <div data-bs-toggle="collapse" data-bs-target="#collapse-obj-beartreescratch">
+                                            <div class="row row-cols-2" role="button">
+                                                <div class="col">How to get</div>
+                                                <div class="col text-end"><i class="bi-chevron-down"></i></div>
+                                            </div>
+                                        </div>
+                                        <div class="collapse mt-3" id="collapse-obj-beartreescratch">
+                                            <b>Event:</b> Aww, a little bear cub!<br>
+                                            Choose "Let's follow it and see.", then "Let's watch and see what happens.". There will be a chance that the cub will use a nearby tree to scratch its back.
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div id="the-weasel" class="mt-3">
+                        <h4>The WEASEL</h4>
+                        <ul class="list-group list-group-flush">
+                            <li class="list-group-item">
+                                <input class="form-check-input me-1" type="checkbox" value="OBJ_WEASELWARDANCE" id="obj-weaselwardance">
+                                <label class="form-check-label" for="obj-weaselwardance">Saw the weasel war dance. More cute than scary.</label>
+                                <div class="card mx-4 my-2">
+                                    <div class="card-body">
+                                        <div data-bs-toggle="collapse" data-bs-target="#collapse-obj-weaselwardance">
+                                            <div class="row row-cols-2" role="button">
+                                                <div class="col">How to get</div>
+                                                <div class="col text-end"><i class="bi-chevron-down"></i></div>
+                                            </div>
+                                        </div>
+                                        <div class="collapse mt-3" id="collapse-obj-weaselwardance">
+                                            <b>Event:</b> Huh? Would you look at that...<br>
+                                            This is Bodega's first story event. Choose "Follow them." for the journal entry.
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                    
+                    <div id="the-owl" class="mt-3">
+                        <h4>The OWL</h4>
+                        <ul class="list-group list-group-flush">
+                            <li class="list-group-item">
+                                <input class="form-check-input me-1" type="checkbox" value="OBJ_OWLPELLET" id="obj-owlpellet">
+                                <label class="form-check-label" for="obj-owlpellet">I'd dissect an owl pellet again.</label>
+                                <div class="card mx-4 my-2">
+                                    <div class="card-body">
+                                        <div data-bs-toggle="collapse" data-bs-target="#collapse-obj-owlpellet">
+                                            <div class="row row-cols-2" role="button">
+                                                <div class="col">How to get</div>
+                                                <div class="col text-end"><i class="bi-chevron-down"></i></div>
+                                            </div>
+                                        </div>
+                                        <div class="collapse mt-3" id="collapse-obj-owlpellet">
+                                            <b>Event:</b> I'm certain I read that owls are good omens.<br>
+                                            Choose "Yeah, owl good things come to those who wait.", "Let's follow it.", and "Watch the owl.". There is a chance that the owl will throw up a pellet that contains a bullet. 
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="list-group-item">
+                                <input class="form-check-input me-1" type="checkbox" value="OBJ_OWLCURSED" id="obj-owlcursed">
+                                <label class="form-check-label" for="obj-owlcursed">Was that curse real?</label>
+                                <div class="card mx-4 my-2">
+                                    <div class="card-body">
+                                        <div data-bs-toggle="collapse" data-bs-target="#collapse-obj-owlcursed">
+                                            <div class="row row-cols-2" role="button">
+                                                <div class="col">How to get</div>
+                                                <div class="col text-end"><i class="bi-chevron-down"></i></div>
+                                            </div>
+                                        </div>
+                                        <div class="collapse mt-3" id="collapse-obj-owlcursed">
+                                            <b>Event:</b> I'm certain I read that owls are good omens.<br>
+                                            Choose "Didn't they mean certain death?", "Let's follow it.", and "I'm going to shoot you now.". Kill the owl.
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="list-group-item">
+                                <input class="form-check-input me-1" type="checkbox" value="OBJ_OWLFIGHTSKUNK" id="obj-owlfightskunk">
+                                <label class="form-check-label" for="obj-owlfightskunk">Owl vs skunk. A battle for the ages.</label>
+                                <div class="card mx-4 my-2">
+                                    <div class="card-body">
+                                        <div data-bs-toggle="collapse" data-bs-target="#collapse-obj-owlfightskunk">
+                                            <div class="row row-cols-2" role="button">
+                                                <div class="col">How to get</div>
+                                                <div class="col text-end"><i class="bi-chevron-down"></i></div>
+                                            </div>
+                                        </div>
+                                        <div class="collapse mt-3" id="collapse-obj-owlfightskunk">
+                                            <b>Event:</b> Chomper, don't get any bad ideas.<br>
+                                            Choose "Follow them", and then "Watch and see what happens.". There will be a chance that the owl will catch the skunk.
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                    
+                    <div id="the-rabbit" class="mt-3">
+                        <h4>The RABBIT</h4>
+                        <ul class="list-group list-group-flush">
+                            <li class="list-group-item">
+                                <input class="form-check-input me-1" type="checkbox" value="OBJ_BUNNYTAKENBYEAGLE" id="obj-bunnytakenbyeagle">
+                                <label class="form-check-label" for="obj-bunnytakenbyeagle">I still feel guilty about fluffington</label>
+                                <div class="card mx-4 my-2">
+                                    <div class="card-body">
+                                        <div data-bs-toggle="collapse" data-bs-target="#collapse-obj-bunnytakenbyeagle">
+                                            <div class="row row-cols-2" role="button">
+                                                <div class="col">How to get</div>
+                                                <div class="col text-end"><i class="bi-chevron-down"></i></div>
+                                            </div>
+                                        </div>
+                                        <div class="collapse mt-3" id="collapse-obj-bunnytakenbyeagle">
+                                            <b>Event:</b> Rabbit is supposed to be a delicacy.<br>
+                                            Choose "Check it out.", and then either let the timer runs out or choose "You mind being bait?".
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="list-group-item">
+                                <input class="form-check-input me-1" type="checkbox" value="OBJ_BUNNYNAMEDFLUFFINGTON" id="obj-bunnynamedfluffington">
+                                <label class="form-check-label" for="obj-bunnynamedfluffington">OBJ_BUNNYNAMEDFLUFFINGTON</label>
+                            </li>
+                            <li class="list-group-item">
+                                <input class="form-check-input me-1" type="checkbox" value="OBJ_BUNNYCHOMPERATTACK" id="obj-bunnychomperattack">
+                                <label class="form-check-label" for="obj-bunnychomperattack">OBJ_BUNNYCHOMPERATTACK</label>
+                            </li>
+                        </ul>
+                    </div>
+                    
+                    <div id="the-moose" class="mt-3">
+                        <h4>The MOOSE</h4>
+                        <ul class="list-group list-group-flush">
+                            <li class="list-group-item">
+                                <input class="form-check-input me-1" type="checkbox" value="OBJ_MOOSEALBINOADMIRE" id="obj-moosealbinoadmire">
+                                <label class="form-check-label" for="obj-moosealbinoadmire">Was that a ghost moose?</label>
+                                <div class="card mx-4 my-2">
+                                    <div class="card-body">
+                                        <div data-bs-toggle="collapse" data-bs-target="#collapse-obj-moosealbinoadmire">
+                                            <div class="row row-cols-2" role="button">
+                                                <div class="col">How to get</div>
+                                                <div class="col text-end"><i class="bi-chevron-down"></i></div>
+                                            </div>
+                                        </div>
+                                        <div class="collapse mt-3" id="collapse-obj-moosealbinoadmire">
+                                            <b>Event:</b> You can't see anything out there.<br>
+                                            Choose "Check out.", and then "Leave.".
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="list-group-item">
+                                <input class="form-check-input me-1" type="checkbox" value="OBJ_MOOSEOWLSEEN" id="obj-mooseowlseen">
+                                <label class="form-check-label" for="obj-mooseowlseen">But who "hooted"?! The moose or owl?!</label>
+                                <div class="card mx-4 my-2">
+                                    <div class="card-body">
+                                        <div data-bs-toggle="collapse" data-bs-target="#collapse-obj-mooseowlseen">
+                                            <div class="row row-cols-2" role="button">
+                                                <div class="col">How to get</div>
+                                                <div class="col text-end"><i class="bi-chevron-down"></i></div>
+                                            </div>
+                                        </div>
+                                        <div class="collapse mt-3" id="collapse-obj-mooseowlseen">
+                                            <b>Event:</b> There's an owl nearby somewhere.<br>
+                                            Choose "Let's go look for the owl".
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="list-group-item">
+                                <input class="form-check-input me-1" type="checkbox" value="OBJ_MOOSEATTACK" id="obj-mooseattack">
+                                <label class="form-check-label" for="obj-mooseattack">OBJ_MOOSEATTACK</label>
+                            </li>
+                            <li class="list-group-item">
+                                <input class="form-check-input me-1" type="checkbox" value="OBJ_MOOSECHASE" id="obj-moosechase">
+                                <label class="form-check-label" for="obj-moosechase">Time for me to get moooving!</label>
+                                <div class="card mx-4 my-2">
+                                    <div class="card-body">
+                                        <div data-bs-toggle="collapse" data-bs-target="#collapse-obj-moosechase">
+                                            <div class="row row-cols-2" role="button">
+                                                <div class="col">How to get</div>
+                                                <div class="col text-end"><i class="bi-chevron-down"></i></div>
+                                            </div>
+                                        </div>
+                                        <div class="collapse mt-3" id="collapse-obj-moosechase">
+                                            <b>Event:</b> You pups see that? It's a caribou!<br>
+                                            Choose "Let's watch it.", "Try a caribou call", and "Moo.". There will be a chance for a moose to show up.
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="list-group-item">
+                                <input class="form-check-input me-1" type="checkbox" value="OBJ_MOOSELICK" id="obj-mooselick">
+                                <label class="form-check-label" for="obj-mooselick">OBJ_MOOSELICK</label>
+                            </li>
+                        </ul>
+                    </div>
+                    
+                    <div id="the-eagle" class="mt-3">
+                        <h4>The EAGLE</h4>
+                        <ul class="list-group list-group-flush">
+                            <li class="list-group-item">
+                                <input class="form-check-input me-1" type="checkbox" value="OBJ_EAGLEFOODFOLLOW" id="obj-eaglefoodfollow">
+                                <label class="form-check-label" for="obj-eaglefoodfollow">Eagles know the best prey zones.</label>
+                                <div class="card mx-4 my-2">
+                                    <div class="card-body">
+                                        <div data-bs-toggle="collapse" data-bs-target="#collapse-obj-eaglefoodfollow">
+                                            <div class="row row-cols-2" role="button">
+                                                <div class="col">How to get</div>
+                                                <div class="col text-end"><i class="bi-chevron-down"></i></div>
+                                            </div>
+                                        </div>
+                                        <div class="collapse mt-3" id="collapse-obj-eaglefoodfollow">
+                                            <b>Event:</b> Did you see that?! A bald eagle!<br>
+                                            Choose "Chase it.", and either wait for the timer to run out or "Wait.".
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="list-group-item">
+                                <input class="form-check-input me-1" type="checkbox" value="OBJ_EAGLESHOT" id="obj-eagleshot">
+                                <label class="form-check-label" for="obj-eagleshot">Let's not talk about the bald one</label>
+                                <div class="card mx-4 my-2">
+                                    <div class="card-body">
+                                        <div data-bs-toggle="collapse" data-bs-target="#collapse-obj-eagleshot">
+                                            <div class="row row-cols-2" role="button">
+                                                <div class="col">How to get</div>
+                                                <div class="col text-end"><i class="bi-chevron-down"></i></div>
+                                            </div>
+                                        </div>
+                                        <div class="collapse mt-3" id="collapse-obj-eagleshot">
+                                            <b>Event:</b> Did you see that?! A bald eagle!<br>
+                                            Choose either "Hunt it." or "Chase it.", and then "Shoot it anyway.".
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                    
+                    <div id="the-deer" class="mt-3">
+                        <h4>The DEER</h4>
+                        <ul class="list-group list-group-flush">
+                            <li class="list-group-item">
+                                <input class="form-check-input me-1" type="checkbox" value="OBJ_DEERFROZEN" id="obj-deerfrozen">
+                                <label class="form-check-label" for="obj-deerfrozen">How long was that deer out there?</label>
+                                <div class="card mx-4 my-2">
+                                    <div class="card-body">
+                                        <div data-bs-toggle="collapse" data-bs-target="#collapse-obj-deerfrozen">
+                                            <div class="row row-cols-2" role="button">
+                                                <div class="col">How to get</div>
+                                                <div class="col text-end"><i class="bi-chevron-down"></i></div>
+                                            </div>
+                                        </div>
+                                        <div class="collapse mt-3" id="collapse-obj-deerfrozen">
+                                            <b>Event:</b> Is there something up there?<br>
+                                            Choose "Inspect it.", "Approach it.", and then leave the scene (do not harvest the meat).
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="list-group-item">
+                                <input class="form-check-input me-1" type="checkbox" value="OBJ_DEERSTARE" id="obj-deerstare">
+                                <label class="form-check-label" for="obj-deerstare">Great. Judgemental deer.</label>
+                                <div class="card mx-4 my-2">
+                                    <div class="card-body">
+                                        <div data-bs-toggle="collapse" data-bs-target="#collapse-obj-deerstare">
+                                            <div class="row row-cols-2" role="button">
+                                                <div class="col">How to get</div>
+                                                <div class="col text-end"><i class="bi-chevron-down"></i></div>
+                                            </div>
+                                        </div>
+                                        <div class="collapse mt-3" id="collapse-obj-deerstare">
+                                            <b>Event:</b> Something is watching us...<br>
+                                            Choose "Check it out.", and "Raise rifle.". There will be a chance that the deer will survive your shot, regardless if you missed or not in the shooting minigame.
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                    
+                    <div id="the-caribou" class="mt-3">
+                        <h4>The CARIBOU</h4>
+                        <ul class="list-group list-group-flush">
+                            <li class="list-group-item">
+                                <input class="form-check-input me-1" type="checkbox" value="OBJ_CALLEDCARIBOU" id="obj-calledcaribou">
+                                <label class="form-check-label" for="obj-calledcaribou">Successfully learned to talk to caribou.</label>
+                                <div class="card mx-4 my-2">
+                                    <div class="card-body">
+                                        <div data-bs-toggle="collapse" data-bs-target="#collapse-obj-calledcaribou">
+                                            <div class="row row-cols-2" role="button">
+                                                <div class="col">How to get</div>
+                                                <div class="col text-end"><i class="bi-chevron-down"></i></div>
+                                            </div>
+                                        </div>
+                                        <div class="collapse mt-3" id="collapse-obj-calledcaribou">
+                                            <b>Event:</b> You pups see that? It's a caribou!<br>
+                                            Choose "Let's watch it.", "Try a caribou call", and "Grunt.". There will be a chance that the caribou will be interested in your call and approach you.
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="list-group-item">
+                                <input class="form-check-input me-1" type="checkbox" value="OBJ_CARIBOUGOTWOLFED" id="obj-caribougotwolfed">
+                                <label class="form-check-label" for="obj-caribougotwolfed">That wolf came out of nowhere.</label>
+                                <div class="card mx-4 my-2">
+                                    <div class="card-body">
+                                        <div data-bs-toggle="collapse" data-bs-target="#collapse-obj-caribougotwolfed">
+                                            <div class="row row-cols-2" role="button">
+                                                <div class="col">How to get</div>
+                                                <div class="col text-end"><i class="bi-chevron-down"></i></div>
+                                            </div>
+                                        </div>
+                                        <div class="collapse mt-3" id="collapse-obj-caribougotwolfed">
+                                            <b>Event:</b> Wait, is that a caribou?!...<br>
+                                            Choose "Let's hunt.". Shoot the caribou, and when you are prompted to choose an option, let the timer runs out.
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="list-group-item">
+                                <input class="form-check-input me-1" type="checkbox" value="OBJ_HURTCARIBOU" id="obj-hurtcaribou">
+                                <label class="form-check-label" for="obj-hurtcaribou">you have to finish what you start</label>
+                                <div class="card mx-4 my-2">
+                                    <div class="card-body">
+                                        <div data-bs-toggle="collapse" data-bs-target="#collapse-obj-hurtcaribou">
+                                            <div class="row row-cols-2" role="button">
+                                                <div class="col">How to get</div>
+                                                <div class="col text-end"><i class="bi-chevron-down"></i></div>
+                                            </div>
+                                        </div>
+                                        <div class="collapse mt-3" id="collapse-obj-hurtcaribou">
+                                            <b>Event:</b> Wait, is that a caribou?!...<br>
+                                            Choose "Let's hunt.". Shoot the caribou, and either leave or miss the shot (just click outside the circle in the shooting minigame).
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="list-group-item">
+                                <input class="form-check-input me-1" type="checkbox" value="OBJ_FOUNDHURTCARIBOU" id="obj-foundhurtcaribou">
+                                <label class="form-check-label" for="obj-foundhurtcaribou">or else they can end up suffering</label>
+                                <div class="card mx-4 my-2">
+                                    <div class="card-body">
+                                        <div data-bs-toggle="collapse" data-bs-target="#collapse-obj-foundhurtcaribou">
+                                            <div class="row row-cols-2" role="button">
+                                                <div class="col">How to get</div>
+                                                <div class="col text-end"><i class="bi-chevron-down"></i></div>
+                                            </div>
+                                        </div>
+                                        <div class="collapse mt-3" id="collapse-obj-foundhurtcaribou">
+                                            When you meet a caribou in one of the events, try to shoot it, but click outside the circle in the shooting minigame to miss the shot. So far, these events are confirmed to work:
+                                            <ul>
+                                                <li>
+                                                    <b>Event:</b> Wait, is that a caribou?!...<br>
+                                                    Choose "Let's hunt.". Shoot the caribou, and either leave or miss the shot (just click outside the circle in the shooting minigame).
+                                                </li>
+                                                <li>
+                                                    <b>Event:</b> You pups see that? It's a caribou!<br>
+                                                    Choose "Let's hunt it.". Miss the shot (just click outside the circle in the shooting minigame).
+                                                </li>
+                                            </ul>
+                                            <br>Once you finish either event, there will be a chance for this event to spawn.<br>
+                                            <b>Event:</b> What's that out there?<br>
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="list-group-item">
+                                <input class="form-check-input me-1" type="checkbox" value="OBJ_CARIBOUHERD" id="obj-caribouherd">
+                                <label class="form-check-label" for="obj-caribouherd">I can't believe I saw a whole herd!</label>
+                                <div class="card mx-4 my-2">
+                                    <div class="card-body">
+                                        <div data-bs-toggle="collapse" data-bs-target="#collapse-obj-caribouherd">
+                                            <div class="row row-cols-2" role="button">
+                                                <div class="col">How to get</div>
+                                                <div class="col text-end"><i class="bi-chevron-down"></i></div>
+                                            </div>
+                                        </div>
+                                        <div class="collapse mt-3" id="collapse-obj-caribouherd">
+                                            <b>Event:</b> You pups see that?<br>
+                                            Choose "Follow it.".
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                    
+                    <div id="the-squirrel" class="mt-3">
+                        <h4>The SQUIRREL</h4>
+                        <ul class="list-group list-group-flush">
+                            <li class="list-group-item">
+                                <input class="form-check-input me-1" type="checkbox" value="OBJ_SQUIRRELATTACKED" id="obj-squirrelattacked">
+                                <label class="form-check-label" for="obj-squirrelattacked">Look up if squirrels actually have rabies</label>
+                                <div class="card mx-4 my-2">
+                                    <div class="card-body">
+                                        <div data-bs-toggle="collapse" data-bs-target="#collapse-obj-squirrelattacked">
+                                            <div class="row row-cols-2" role="button">
+                                                <div class="col">How to get</div>
+                                                <div class="col text-end"><i class="bi-chevron-down"></i></div>
+                                            </div>
+                                        </div>
+                                        <div class="collapse mt-3" id="collapse-obj-squirrelattacked">
+                                            <b>Event:</b> Oh great, a squirrel.<br>
+                                            This is Chomper's first story event. Choose "Fine, let's check it out.", and then "I speak wink. I'm gonna wink back.". There will be a chance that the squirrel will attack you.
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="list-group-item">
+                                <input class="form-check-input me-1" type="checkbox" value="OBJ_SQUIRRELCABIN" id="obj-squirrelcabin">
+                                <label class="form-check-label" for="obj-squirrelcabin">I will learn to speak squirrels</label>
+                                <div class="card mx-4 my-2">
+                                    <div class="card-body">
+                                        <div data-bs-toggle="collapse" data-bs-target="#collapse-obj-squirrelcabin">
+                                            <div class="row row-cols-2" role="button">
+                                                <div class="col">How to get</div>
+                                                <div class="col text-end"><i class="bi-chevron-down"></i></div>
+                                            </div>
+                                        </div>
+                                        <div class="collapse mt-3" id="collapse-obj-squirrelcabin">
+                                            <b>Event:</b> Ok, so there's just a creepy abandoned cabin sitting over there. Um...<br>
+                                            Choose any option for the first two options (just make sure to enter the cabin). There will be a chance for a squirrel to be inside the cabin. Choose "Let's talk this out.".
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="list-group-item">
+                                <input class="form-check-input me-1" type="checkbox" value="OBJ_SQUIRRELMEAT" id="obj-squirrelmeat">
+                                <label class="form-check-label" for="obj-squirrelmeat">Squirrels wouldn't want meat, right?</label>
+                                <div class="card mx-4 my-2">
+                                    <div class="card-body">
+                                        <div data-bs-toggle="collapse" data-bs-target="#collapse-obj-squirrelmeat">
+                                            <div class="row row-cols-2" role="button">
+                                                <div class="col">How to get</div>
+                                                <div class="col text-end"><i class="bi-chevron-down"></i></div>
+                                            </div>
+                                        </div>
+                                        <div class="collapse mt-3" id="collapse-obj-squirrelmeat">
+                                            You need to finish this event first:<br>
+                                            <b>Event:</b> Oh great, a squirrel.<br>
+                                            This is Chomper's first story event. Choose "Fine, let's check it out.", and then "I'm gonna shot it. (Use bullet)". Kill the squirrel, and choose "Just leave it. Maybe it will throw off a predator.".<br><br>
+                                            Once you finish that event, there will be a chance for this event to spawn:<br>
+                                            <b>Event:</b> Chomper...<br>
+                                            Choose "Fine. We'll go check it out.", and "Ok, fine, it's your nemesis. Go try to eat it.". There will be a chance that a bunch of squirrels will show up. Choose "Dogs, snarl at them or something.".
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="list-group-item">
+                                <input class="form-check-input me-1" type="checkbox" value="OBJ_SQUIRRELBIRDKILL" id="obj-squirrelbirdkill">
+                                <label class="form-check-label" for="obj-squirrelbirdkill">OBJ_SQUIRRELBIRDKILL</label>
+                            </li>
+                        </ul>
+                    </div>
+                    
+                    <div id="the-porcupine" class="mt-3">
+                        <h4>The PORCUPINE</h4>
+                        <ul class="list-group list-group-flush">
+                            <li class="list-group-item">
+                                <input class="form-check-input me-1" type="checkbox" value="OBJ_PORCUPINETREE" id="obj-porcupinetree">
+                                <label class="form-check-label" for="obj-porcupinetree">I'll never forget the porcupinecone.</label>
+                                <div class="card mx-4 my-2">
+                                    <div class="card-body">
+                                        <div data-bs-toggle="collapse" data-bs-target="#collapse-obj-porcupinetree">
+                                            <div class="row row-cols-2" role="button">
+                                                <div class="col">How to get</div>
+                                                <div class="col text-end"><i class="bi-chevron-down"></i></div>
+                                            </div>
+                                        </div>
+                                        <div class="collapse mt-3" id="collapse-obj-porcupinetree">
+                                            <b>Event:</b> I think there's something in that tree...<br>
+                                            This is Gale's second story event. Choose "Check it out.".
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="list-group-item">
+                                <input class="form-check-input me-1" type="checkbox" value="OBJ_PORCUPINESCAVENGE" id="obj-porcupinescavenge">
+                                <label class="form-check-label" for="obj-porcupinescavenge">OBJ_PORCUPINESCAVENGE</label>
+                            </li>
+                        </ul>
+                    </div>
+                    
+                    <div id="the-skunk" class="mt-3">
+                        <h4>The SKUNK</h4>
+                        <ul class="list-group list-group-flush">
+                            <li class="list-group-item">
+                                <input class="form-check-input me-1" type="checkbox" value="OBJ_SKUNKCLOUD" id="obj-skunkcloud">
+                                <label class="form-check-label" for="obj-skunkcloud">That spray smells like rotten gasoline.</label>
+                                <div class="card mx-4 my-2">
+                                    <div class="card-body">
+                                        <div data-bs-toggle="collapse" data-bs-target="#collapse-obj-skunkcloud">
+                                            <div class="row row-cols-2" role="button">
+                                                <div class="col">How to get</div>
+                                                <div class="col text-end"><i class="bi-chevron-down"></i></div>
+                                            </div>
+                                        </div>
+                                        <div class="collapse mt-3" id="collapse-obj-skunkcloud">
+                                            <b>Event:</b> Is that a...<br>
+                                            Choose "Inspect".
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="list-group-item">
+                                <input class="form-check-input me-1" type="checkbox" value="OBJ_SKUNKFIGHTOFFOWL" id="obj-skunkfightoffowl">
+                                <label class="form-check-label" for="obj-skunkfightoffowl">Those skunk bombs are very effective.</label>
+                                <div class="card mx-4 my-2">
+                                    <div class="card-body">
+                                        <div data-bs-toggle="collapse" data-bs-target="#collapse-obj-skunkfightoffowl">
+                                            <div class="row row-cols-2" role="button">
+                                                <div class="col">How to get</div>
+                                                <div class="col text-end"><i class="bi-chevron-down"></i></div>
+                                            </div>
+                                        </div>
+                                        <div class="collapse mt-3" id="collapse-obj-skunkfightoffowl">
+                                            <b>Event:</b> Chomper, don't get any bad ideas.<br>
+                                            Choose "Follow them", and then "Watch and see what happens.". There will be a chance that the skunk will use a skunk bomb.
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                    
+                    <div id="the-elk" class="mt-3">
+                        <h4>The ELK</h4>
+                        <ul class="list-group list-group-flush">
+                            <li class="list-group-item">
+                                <input class="form-check-input me-1" type="checkbox" value="OBJ_ELKCALL" id="obj-elkcall">
+                                <label class="form-check-label" for="obj-elkcall">Going to have to get used to that elk shriek.</label>
+                                <div class="card mx-4 my-2">
+                                    <div class="card-body">
+                                        <div data-bs-toggle="collapse" data-bs-target="#collapse-obj-elkcall">
+                                            <div class="row row-cols-2" role="button">
+                                                <div class="col">How to get</div>
+                                                <div class="col text-end"><i class="bi-chevron-down"></i></div>
+                                            </div>
+                                        </div>
+                                        <div class="collapse mt-3" id="collapse-obj-elkcall">
+                                            <b>Event:</b> You're a big fella, aren't you?<br>
+                                            Choose "I'm going to check it out.", and then "Reach out.". There will be a chance that the elk will run away.
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="list-group-item">
+                                <input class="form-check-input me-1" type="checkbox" value="OBJ_ELKPETTED" id="obj-elkpetted">
+                                <label class="form-check-label" for="obj-elkpetted">I. PET. AN. ELK!</label>
+                                <div class="card mx-4 my-2">
+                                    <div class="card-body">
+                                        <div data-bs-toggle="collapse" data-bs-target="#collapse-obj-elkpetted">
+                                            <div class="row row-cols-2" role="button">
+                                                <div class="col">How to get</div>
+                                                <div class="col text-end"><i class="bi-chevron-down"></i></div>
+                                            </div>
+                                        </div>
+                                        <div class="collapse mt-3" id="collapse-obj-elkpetted">
+                                            <b>Event:</b> You're a big fella, aren't you?<br>
+                                            Choose "I'm going to check it out.", and then "Reach out.". There will be a chance that you will pet the elk.
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="list-group-item">
+                                <input class="form-check-input me-1" type="checkbox" value="OBJ_ELKSHRIEKLEARN" id="obj-elkshrieklearn">
+                                <label class="form-check-label" for="obj-elkshrieklearn">They're so majestic!</label>
+                                <div class="card mx-4 my-2">
+                                    <div class="card-body">
+                                        <div data-bs-toggle="collapse" data-bs-target="#collapse-obj-elkshrieklearn">
+                                            <div class="row row-cols-2" role="button">
+                                                <div class="col">How to get</div>
+                                                <div class="col text-end"><i class="bi-chevron-down"></i></div>
+                                            </div>
+                                        </div>
+                                        <div class="collapse mt-3" id="collapse-obj-elkshrieklearn">
+                                            <b>Event:</b> Uhhh, what was that?<br>
+                                            Choose "Let's follow it.".
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="list-group-item">
+                                <input class="form-check-input me-1" type="checkbox" value="OBJ_ELKSHED" id="obj-elkshed">
+                                <label class="form-check-label" for="obj-elkshed">Night of the living shed</label>
+                                <div class="card mx-4 my-2">
+                                    <div class="card-body">
+                                        <div data-bs-toggle="collapse" data-bs-target="#collapse-obj-elkshed">
+                                            <div class="row row-cols-2" role="button">
+                                                <div class="col">How to get</div>
+                                                <div class="col text-end"><i class="bi-chevron-down"></i></div>
+                                            </div>
+                                        </div>
+                                        <div class="collapse mt-3" id="collapse-obj-elkshed">
+                                            <b>Event:</b> It looks like there's something out there.<br>
+                                            Choose "Check it out.", and then "Approach it.". There will be a chance that you will see it shedding its antlers.
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                    
+                    <div id="the-ptamirgans" class="mt-3">
+                        <h4>The PTAMIRGANS</h4>
+                        <ul class="list-group list-group-flush">
+                            <li class="list-group-item">
+                                <input class="form-check-input me-1" type="checkbox" value="OBJ_PTARMIGANCAMO" id="obj-ptarmigancamo">
+                                <label class="form-check-label" for="obj-ptarmigancamo">I almost didn't even see them.</label>
+                                <div class="card mx-4 my-2">
+                                    <div class="card-body">
+                                        <div data-bs-toggle="collapse" data-bs-target="#collapse-obj-ptarmigancamo">
+                                            <div class="row row-cols-2" role="button">
+                                                <div class="col">How to get</div>
+                                                <div class="col text-end"><i class="bi-chevron-down"></i></div>
+                                            </div>
+                                        </div>
+                                        <div class="collapse mt-3" id="collapse-obj-ptarmigancamo">
+                                            <b>Event:</b> Chomper... you look ready to chomp./What's going on up there, Stilton?/Noodle, should I be scared?<br>
+                                            Choose "Let's check it out.".
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                    
+                    <div id="the-ox" class="mt-3">
+                        <h4>The OX</h4>
+                        <ul class="list-group list-group-flush">
+                            <li class="list-group-item">
+                                <input class="form-check-input me-1" type="checkbox" value="OBJ_OXSEEN" id="obj-oxseen">
+                                <label class="form-check-label" for="obj-oxseen">Ox have the best hairdos.</label>
+                                <div class="card mx-4 my-2">
+                                    <div class="card-body">
+                                        <div data-bs-toggle="collapse" data-bs-target="#collapse-obj-oxseen">
+                                            <div class="row row-cols-2" role="button">
+                                                <div class="col">How to get</div>
+                                                <div class="col text-end"><i class="bi-chevron-down"></i></div>
+                                            </div>
+                                        </div>
+                                        <div class="collapse mt-3" id="collapse-obj-oxseen">
+                                            <b>Event:</b> Shhh, I've heard bad things about these guys.<br>
+                                            Choose "Check it out.", and then "Continue watching.". There will be a chance that the ox will attack you.
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                    
+                    <div id="the-wolverine" class="mt-3">
+                        <h4>The WOLVERINE</h4>
+                        <ul class="list-group list-group-flush">
+                            <li class="list-group-item">
+                                <input class="form-check-input me-1" type="checkbox" value="OBJ_WOLVERINEFOUGHT" id="obj-wolverinefought">
+                                <label class="form-check-label" for="obj-wolverinefought">I'd like to avoid fighting wolverines. They're claws and fury.</label>
+                                <div class="card mx-4 my-2">
+                                    <div class="card-body">
+                                        <div data-bs-toggle="collapse" data-bs-target="#collapse-obj-wolverinefought">
+                                            <div class="row row-cols-2" role="button">
+                                                <div class="col">How to get</div>
+                                                <div class="col text-end"><i class="bi-chevron-down"></i></div>
+                                            </div>
+                                        </div>
+                                        <div class="collapse mt-3" id="collapse-obj-wolverinefought">
+                                            <b>Event:</b> Feel free to stay over there. We don't mind.<br>
+                                            This is either Igloo's second story event or Bodega's third story event.
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="list-group-item">
+                                <input class="form-check-input me-1" type="checkbox" value="OBJ_WOLVERINESPOTSYOU" id="obj-wolverinespotsyou">
+                                <label class="form-check-label" for="obj-wolverinespotsyou">Got made by a wolverine.</label>
+                                <div class="card mx-4 my-2">
+                                    <div class="card-body">
+                                        <div data-bs-toggle="collapse" data-bs-target="#collapse-obj-wolverinespotsyou">
+                                            <div class="row row-cols-2" role="button">
+                                                <div class="col">How to get</div>
+                                                <div class="col text-end"><i class="bi-chevron-down"></i></div>
+                                            </div>
+                                        </div>
+                                        <div class="collapse mt-3" id="collapse-obj-wolverinespotsyou">
+                                            <b>Event:</b> Looks like we've found someone's dinner.<br>
+                                            Choose "Let's check it out.", and then harvest either 1 or 2 meats. There will be a chance that a wolverine will spot you.
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                    
+                    <div id="the-wolf" class="mt-3">
+                        <h4>The WOLF</h4>
+                        <ul class="list-group list-group-flush">
+                            <li class="list-group-item">
+                                <input class="form-check-input me-1" type="checkbox" value="OBJ_WOLFSTALKING" id="obj-wolfstalking">
+                                <label class="form-check-label" for="obj-wolfstalking">How do you know if a wolf is stalking you?</label>
+                                <div class="card mx-4 my-2">
+                                    <div class="card-body">
+                                        <div data-bs-toggle="collapse" data-bs-target="#collapse-obj-wolfstalking">
+                                            <div class="row row-cols-2" role="button">
+                                                <div class="col">How to get</div>
+                                                <div class="col text-end"><i class="bi-chevron-down"></i></div>
+                                            </div>
+                                        </div>
+                                        <div class="collapse mt-3" id="collapse-obj-wolfstalking">
+                                            <b>Event:</b> How close do you think that wolf is?<br>
+                                            Choose "Try to find it.".
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="list-group-item">
+                                <input class="form-check-input me-1" type="checkbox" value="OBJ_WOLFRELEASETRAP" id="obj-wolfreleasetrap">
+                                <label class="form-check-label" for="obj-wolfreleasetrap">I couldn't leave the wolf like that.</label>
+                                <div class="card mx-4 my-2">
+                                    <div class="card-body">
+                                        <div data-bs-toggle="collapse" data-bs-target="#collapse-obj-wolfreleasetrap">
+                                            <div class="row row-cols-2" role="button">
+                                                <div class="col">How to get</div>
+                                                <div class="col text-end"><i class="bi-chevron-down"></i></div>
+                                            </div>
+                                        </div>
+                                        <div class="collapse mt-3" id="collapse-obj-wolfreleasetrap">
+                                            <b>Event:</b> Noodle, are you trying to bring it closer or keep it away?<br>
+                                            This is Noodle's first story event. Choose "Try to find it.", and then "Oh, you just wanted to help.".
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="list-group-item">
+                                <input class="form-check-input me-1" type="checkbox" value="OBJ_WOLFTOSSFOOD" id="obj-wolftossfood">
+                                <label class="form-check-label" for="obj-wolftossfood">sometimes you have to feed the wildlife.</label>
+                                <div class="card mx-4 my-2">
+                                    <div class="card-body">
+                                        <div data-bs-toggle="collapse" data-bs-target="#collapse-obj-wolftossfood">
+                                            <div class="row row-cols-2" role="button">
+                                                <div class="col">How to get</div>
+                                                <div class="col text-end"><i class="bi-chevron-down"></i></div>
+                                            </div>
+                                        </div>
+                                        <div class="collapse mt-3" id="collapse-obj-wolftossfood">
+                                            <b>Event:</b> Oh hey... a little wolf friend.<br>
+                                            The journal can only be triggered when Barkley still hasn't finished their story events. Choose "Throw food at wolf.".
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="list-group-item">
+                                <input class="form-check-input me-1" type="checkbox" value="OBJ_WOLVESATLAKE" id="obj-wolvesatlake">
+                                <label class="form-check-label" for="obj-wolvesatlake">they don't like it when you try to take their kill</label>
+                                <div class="card mx-4 my-2">
+                                    <div class="card-body">
+                                        <div data-bs-toggle="collapse" data-bs-target="#collapse-obj-wolvesatlake">
+                                            <div class="row row-cols-2" role="button">
+                                                <div class="col">How to get</div>
+                                                <div class="col text-end"><i class="bi-chevron-down"></i></div>
+                                            </div>
+                                        </div>
+                                        <div class="collapse mt-3" id="collapse-obj-wolvesatlake">
+                                            <b>Event:</b> What do you smell?<br>
+                                            Choose "Follow it.", and then "Go get it.". There will be a chance that a wolf will show up and attack you.
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                    
+                    <div id="the-beaver" class="mt-3">
+                        <h4>The BEAVER</h4>
+                        <ul class="list-group list-group-flush">
+                            <li class="list-group-item">
+                                <input class="form-check-input me-1" type="checkbox" value="OBJ_BEAVERFISHING" id="obj-beaverfishing">
+                                <label class="form-check-label" for="obj-beaverfishing">Beavers will lead you to open water</label>
+                                <div class="card mx-4 my-2">
+                                    <div class="card-body">
+                                        <div data-bs-toggle="collapse" data-bs-target="#collapse-obj-beaverfishing">
+                                            <div class="row row-cols-2" role="button">
+                                                <div class="col">How to get</div>
+                                                <div class="col text-end"><i class="bi-chevron-down"></i></div>
+                                            </div>
+                                        </div>
+                                        <div class="collapse mt-3" id="collapse-obj-beaverfishing">
+                                            <b>Event:</b> Oh god! That could've smashed the river wide open!<br>
+                                            Choose "Check out the fishing hole.", and then "Try fishing.".
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="list-group-item">
+                                <input class="form-check-input me-1" type="checkbox" value="OBJ_BEAVERTREEHIT" id="obj-beavertreehit">
+                                <label class="form-check-label" for="obj-beavertreehit">Beavers have good aim.</label>
+                            </li>
+                            <li class="list-group-item">
+                                <input class="form-check-input me-1" type="checkbox" value="OBJ_BEAVERMEETGREET" id="obj-beavermeetgreet">
+                                <label class="form-check-label" for="obj-beavermeetgreet">OBJ_BEAVERMEETGREET</label>
+                                <div class="card mx-4 my-2">
+                                    <div class="card-body">
+                                        <div data-bs-toggle="collapse" data-bs-target="#collapse-obj-beavermeetgreet">
+                                            <div class="row row-cols-2" role="button">
+                                                <div class="col">How to get</div>
+                                                <div class="col text-end"><i class="bi-chevron-down"></i></div>
+                                            </div>
+                                        </div>
+                                        <div class="collapse mt-3" id="collapse-obj-beavermeetgreet">
+                                            <b>Event:</b> Oh god! That could've smashed the river wide open!<br>
+                                            Choose "Check out the fishing hole.", and then "Look for the beaver.". There will be a chance that you will avoid the tree attack. Choose "Leave." afterwards.
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                  </div>
+                </div>
+            </div>
+        </div>
+              
+        <div class="footer" role="navigation">
+            <div class="container text-center">
+                <div class="row justify-content-center ">
+                    <span class="col-md-auto my-3">
+                        <span>Made by aquatorrent, credits to <a href="https://steamcommunity.com/sharedfiles/filedetails/?id=3191177149">Loliwo</a> and <a href="https://steamcommunity.com/sharedfiles/filedetails/?id=3196326887">imnotgoats</a> for their guide to make the content.</span>
+                    </span>
+                </div>
+            </div>
+        </div> 
+
+        </div>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>        
+        <script src="script/script.min.js"></script>
+    </body>
+</html>
